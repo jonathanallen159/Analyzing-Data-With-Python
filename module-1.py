@@ -38,3 +38,25 @@ print(stat_description)
 # another useful function provides a concise summary of the dataframe
 data_summary = df.info() # this functions shows the top 30 rows and bottom 30 rows of the data dataframe
 print(data_summary)
+
+
+### DATABASE DEMO ###
+# this code is example code of how one may connect to a database using DB-API
+'''
+# this imports the appropriate API function for connecting to the DBMS
+from dbmodule import connect
+
+# create the connection object
+connection = connect('database', 'username', 'password') # obviously insert the actual database name, username and password of the specific database you are accessing
+
+# create the cursor object
+cursor = connection.cursor() # the cursor object is analogous to a text processing cursor and is an object that can scroll through the data, the cursor is used to run queries
+
+# run queries on the database
+cursor.execute('select * from mytable') # the cursor can now be used to find out what you want to know from the database
+results = cursor.fetchall() # the results of your queries are then fetched by the cursor for you
+
+# free up computational resources by closing the connection
+cursor.close()
+connection.close()
+'''
